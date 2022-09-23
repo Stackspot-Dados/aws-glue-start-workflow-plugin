@@ -21,7 +21,5 @@ inputs:
   - label: Digite o nome do Glue Workflow que será iniciado 
     type: text
     name: workflow_name
-  - label: Digite o nome do bucket 
-    type: text
-    name: bucket_name
+
  

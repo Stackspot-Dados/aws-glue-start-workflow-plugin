@@ -117,20 +117,20 @@ def create_workflow_run_properties(bucket_name, key_object_detail):
     key_object_detail = key_object_detail.split('/')[0:2]
     prefixo_pasta = '/'.join(key_object_detail) + '/'
 
-    BUCKETS_DBS = utils.get_environment_variable('BUCKETS_DBS')
+    DICT_BUCKETS_DBS = utils.get_environment_variable('JSON_DICT_BUCKETS_DBS')
 
     try:
         logger.info(
             "INFO: Criando as propriedades de execução do workflow (Glue)"
         )
-        BUCKETS_DBS = json.loads(BUCKETS_DBS)
-        data_base_glue = BUCKETS_DBS[
+        DICT_BUCKETS_DBS = json.loads(DICT_BUCKETS_DBS)
+        data_base_glue = DICT_BUCKETS_DBS[
             '/'.join([bucket_name, key_object_detail[0]]) + '/'
         ]
     except ValueError:
         raise ValueError(
             "ERROR: Erro ao carregar JSON da variável de \
-            ambiente BUCKETS_DBS"
+            ambiente DICT_BUCKETS_DBS"
         )
     except KeyError:
         raise KeyError(

@@ -14,7 +14,7 @@ resource "aws_iam_role" "lambda_iam_role" {
       "Sid": ""
     },
     {
-        "Action": ["rds:DeleteDBSnapshot", "rds:DeleteDBClusterSnapshot", "rds:CreateDBSnapshot", "rds:CreateDBClusterSnapshot"],
+        "Action": ["glue:StartWorkflowRun", "glue:PutWorkflowRunProperties"],
         "Effect": "Allow",
         "Resource: "*"
     }
@@ -38,7 +38,7 @@ resource "aws_lambda_function" "lambda_start_workflow" {
   environment {
     variables = {
       WORKFLOW_NAME = {{inputs.workflow_name}}
-      BUCKETS_DBS = {{inputs.bucket_name}}
+      DIC_BUCKETS_DBS = {"bucket/snapshots/teste/":"DatabseGlue"} // Dicionario com os nomes dos buckets e Databases do Glue
     }
   }
 }
