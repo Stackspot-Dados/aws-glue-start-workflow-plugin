@@ -1,0 +1,11 @@
+applied_templates:
+- inputs: {}
+  template_data_path: ''
+- inputs:
+    bucket_name: teste
+    lambda_role: teste
+    workflow_name: teste
+  template_data_path: Projetos/aws-glue-start-workflow-plugin
+global_computed_inputs: {}
+global_inputs: {}
+stack_type: app

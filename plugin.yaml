@@ -1,0 +1,27 @@
+name: aws-glue-start-workflow-plugin
+description: Aws plugin start workflow plugin
+display-name: aws-glue-start-workflow-plugin
+picture: plugin.png
+category: backend # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#category
+compatibility:
+  - java
+  - spring
+about: docs/about.md
+usage: docs/usage.md
+use-case: docs/use-case.md
+implementation: docs/implementation.md
+technologies: # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#technologies
+  - "Api"
+types:
+  - app
+inputs:
+  - label: Defina um nome de IAM Role
+    type: text
+    name: lambda_role
+  - label: Digite o nome do Glue Workflow que será iniciado 
+    type: text
+    name: workflow_name
+  - label: Digite o nome do bucket 
+    type: text
+    name: bucket_name
+ 
